@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card-bg { fill: #1e293b; rx: 16px; }
+      .qr-bg { fill: #ffffff; rx: 12px; }
+      .qr-dark { fill: #0f172a; }
+      .text-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 700; fill: #f8fafc; text-anchor: middle; }
+      .text-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; fill: #94a3b8; text-anchor: middle; }
+      .text-link { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 600; fill: #38bdf8; }
+      .text-detail { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; fill: #cbd5e1; }
+      .btn-bg { fill: #334155; rx: 10px; transition: all 0.3s; }
+      .btn-group:hover .btn-bg { fill: #0284c7; }
+    </style>
+
+    <!-- LOGO DEFINITIONS -->
+    <!-- Gmail Logo -->
+    <g id="logo-gmail">
+      <path fill="#EA4335" d="M3 18V6l9 6.75L21 6v12a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18z"/>
+      <path fill="#34A853" d="M3 6.75V18a1.5 1.5 0 0 0 1.5 1.5H6V9L3 6.75z"/>
+      <path fill="#4285F4" d="M21 6.75V18a1.5 1.5 0 0 1-1.5 1.5H18V9l3-2.25z"/>
+      <path fill="#FBBC04" d="M18 4.5l-6 4.5-6-4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5z"/>
+    </g>
+
+    <!-- Phone Logo -->
+    <g id="logo-phone">
+      <rect width="24" height="24" rx="12" fill="#22c55e"/>
+      <path fill="#ffffff" d="M7 8.5c0-.8.7-1.5 1.5-1.5h1c.4 0 .8.2 1 .6l1.2 2.4c.2.4.1.9-.2 1.2l-.8.8c.8 1.6 2.1 2.9 3.7 3.7l.8-.8c.3-.3.8-.4 1.2-.2l2.4 1.2c.4.2.6.6.6 1v1c0 .8-.7 1.5-1.5 1.5-6.1 0-11-4.9-11-11z"/>
+    </g>
+
+    <!-- Facebook Logo -->
+    <g id="logo-facebook">
+      <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+      <path fill="#ffffff" d="M14 12h-1.8v6h-2.5v-6H8.5V9.8h1.2V8.2c0-1.7 1-2.7 2.6-2.7h1.6v2.2h-1c-.8 0-1 .4-1 1v1.1h2l-.3 2.2z"/>
+    </g>
+
+    <!-- Instagram Logo -->
+    <g id="logo-instagram">
+      <rect width="24" height="24" rx="6" fill="url(#ig-grad)"/>
+      <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="3.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="16" cy="8" r="1" fill="#ffffff"/>
+    </g>
+    <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fdf497"/>
+      <stop offset="25%" stop-color="#fdf497"/>
+      <stop offset="50%" stop-color="#fd5949"/>
+      <stop offset="75%" stop-color="#d6249f"/>
+      <stop offset="100%" stop-color="#285AEB"/>
+    </linearGradient>
+
+    <!-- YouTube Logo -->
+    <g id="logo-youtube">
+      <rect width="24" height="17" x="0" y="3.5" rx="4" fill="#FF0000"/>
+      <polygon points="10,7 16,12 10,17" fill="#ffffff"/>
+    </g>
+
+    <!-- TikTok Logo -->
+    <g id="logo-tiktok">
+      <rect width="24" height="24" rx="12" fill="#000000"/>
+      <path fill="#25F4EE" d="M15.5 6a4.5 4.5 0 0 0 3 1.2V9.7a7 7 0 0 1-3-1v4.8a4.5 4.5 0 1 1-4.5-4.5c.3 0 .6 0 .9.1v2.6a2 2 0 1 0 1.1 1.8V4h2.5a4.5 4.5 0 0 0 0 2z"/>
+      <path fill="#FE2C55" d="M15 5.5a4.5 4.5 0 0 0 3 1.2V9.2a7 7 0 0 1-3-1v4.8a4.5 4.5 0 1 1-4.5-4.5c.3 0 .6 0 .9.1v2.6a2 2 0 1 0 1.1 1.8V3.5h2.5A4.5 4.5 0 0 0 15 5.5z" opacity="0.8"/>
+    </g>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect class="bg" width="500" height="700" rx="20"/>
+
+  <!-- Main Container Card -->
+  <rect class="card-bg" x="25" y="25" width="450" height="650"/>
+
+  <!-- Header Text -->
+  <text class="text-title" x="250" y="65">DAR CamSur 1 Contacts</text>
+  <text class="text-sub" x="250" y="85">Scan QR or Click links to connect with us</text>
+
+  <!-- DYNAMIC QR CODE CONTAINER -->
+  <g transform="translate(160, 105)">
+    <!-- QR Outer White Card -->
+    <rect class="qr-bg" width="180" height="180"/>
+    <rect x="6" y="6" width="168" height="168" fill="none" stroke="#e2e8f0" stroke-width="1.5" rx="8"/>
+
+    <!-- FINDER PATTERN: Top-Left -->
+    <rect class="qr-dark" x="18" y="18" width="38" height="38" rx="5"/>
+    <rect fill="#ffffff" x="24" y="24" width="26" height="26" rx="3"/>
+    <rect class="qr-dark" x="30" y="30" width="14" height="14" rx="2"/>
+
+    <!-- FINDER PATTERN: Top-Right -->
+    <rect class="qr-dark" x="124" y="18" width="38" height="38" rx="5"/>
+    <rect fill="#ffffff" x="130" y="24" width="26" height="26" rx="3"/>
+    <rect class="qr-dark" x="136" y="30" width="14" height="14" rx="2"/>
+
+    <!-- FINDER PATTERN: Bottom-Left -->
+    <rect class="qr-dark" x="18" y="124" width="38" height="38" rx="5"/>
+    <rect fill="#ffffff" x="24" y="130" width="26" height="26" rx="3"/>
+    <rect class="qr-dark" x="30" y="136" width="14" height="14" rx="2"/>
+
+    <!-- DATA MODULES (Simulated Dynamic Modules) -->
+    <rect class="qr-dark" x="64" y="20" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="76" y="20" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="94" y="20" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="106" y="20" width="6" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="64" y="32" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="88" y="32" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="100" y="32" width="12" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="70" y="44" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="82" y="44" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="100" y="44" width="6" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="20" y="64" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="32" y="64" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="50" y="64" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="62" y="64" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="86" y="64" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="98" y="64" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="122" y="64" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="134" y="64" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="152" y="64" width="8" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="26" y="78" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="44" y="78" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="68" y="78" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="104" y="78" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="128" y="78" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="140" y="78" width="18" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="20" y="96" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="38" y="96" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="62" y="96" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="80" y="96" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="92" y="96" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="116" y="96" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="146" y="96" width="12" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="26" y="110" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="50" y="110" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="68" y="110" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="92" y="110" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="104" y="110" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="134" y="110" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="146" y="110" width="12" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="64" y="128" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="76" y="128" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="100" y="128" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="124" y="128" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="140" y="128" width="12" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="70" y="144" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="94" y="144" width="6" height="12" rx="1"/>
+    <rect class="qr-dark" x="112" y="144" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="130" y="144" width="18" height="6" rx="1"/>
+
+    <rect class="qr-dark" x="64" y="156" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="82" y="156" width="6" height="6" rx="1"/>
+    <rect class="qr-dark" x="106" y="156" width="12" height="6" rx="1"/>
+    <rect class="qr-dark" x="124" y="156" width="18" height="6" rx="1"/>
+    <rect class="qr-dark" x="148" y="156" width="6" height="6" rx="1"/>
+
+    <!-- Center Logo Badge -->
+    <rect fill="#ffffff" x="66" y="66" width="48" height="48" rx="8"/>
+    <rect fill="#0284c7" x="70" y="70" width="40" height="40" rx="6"/>
+    <text font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="12" fill="#ffffff" x="90" y="94" text-anchor="middle">DAR</text>
+  </g>
+
+  <!-- INTERACTIVE CONTACT & SOCIAL LINKS -->
+  <g transform="translate(45, 310)">
+    
+    <!-- Gmail -->
+    <a href="mailto:camarinessurdar1@gmail.com" target="_blank" class="btn-group">
+      <g transform="translate(0, 0)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-gmail" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">Email</text>
+        <text class="text-link" x="50" y="36">camarinessurdar1@gmail.com</text>
+      </g>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:8112139" target="_blank" class="btn-group">
+      <g transform="translate(0, 58)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-phone" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">Phone</text>
+        <text class="text-link" x="50" y="36">811 2139</text>
+      </g>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://facebook.com/darcamsur1" target="_blank" class="btn-group">
+      <g transform="translate(0, 116)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-facebook" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">Facebook</text>
+        <text class="text-link" x="50" y="36">facebook.com/darcamsur1</text>
+      </g>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://instagram.com/darcamsur1" target="_blank" class="btn-group">
+      <g transform="translate(0, 174)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-instagram" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">Instagram</text>
+        <text class="text-link" x="50" y="36">instagram.com/darcamsur1</text>
+      </g>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://youtube.com/@DARCamSur1" target="_blank" class="btn-group">
+      <g transform="translate(0, 232)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-youtube" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">YouTube</text>
+        <text class="text-link" x="50" y="36">youtube.com/@DARCamSur1</text>
+      </g>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@darcamsur1" target="_blank" class="btn-group">
+      <g transform="translate(0, 290)">
+        <rect class="btn-bg" width="410" height="48"/>
+        <use href="#logo-tiktok" x="14" y="12"/>
+        <text class="text-detail" x="50" y="20" font-weight="bold">TikTok</text>
+        <text class="text-link" x="50" y="36">tiktok.com/@darcamsur1</text>
+      </g>
+    </a>
+
+  </g>
+</svg>
